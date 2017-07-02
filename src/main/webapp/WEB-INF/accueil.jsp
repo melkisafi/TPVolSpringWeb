@@ -13,7 +13,7 @@
 <title><spring:message code="accueil.title" /></title>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" ><spring:message code="accueil.title2" /></a>
