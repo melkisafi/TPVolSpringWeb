@@ -46,21 +46,21 @@
     <div class="carousel-inner">
 
       <div class="item active">
-        <img src="https://www.bahamas.com/sites/all/themes/custom/bahamas2016/images/bahamas-intro.jpg" alt="Bahamas" style="width:100%;">
+        <img src="https://www.wereldreisgids.nl/media/content/8q7bOs7D8s_vakantie-bahamas-1200x600.jpg" alt="Bahamas" style="width:100%;">
         <div class="carousel-caption">
           <h3>Bahamas</h3>
         </div>
       </div>
 
       <div class="item">
-        <img src="http://www.indonesia.travel/uploads/a37a09cdd25bacdbd20c2d45dbd367fac48210bf-e729f.jpg" alt="Bali" style="width:100%;">
+        <img src="https://scdn3.thomascook.com/crop?imageUrl=http://magnolia.production.thomascook.io/wcms/dam/tcuk/new/campaigns/signature/bali-sig-hero.jpg&maxWidth=1200&maxHeight=0" alt="Bali" style="width:100%;">
         <div class="carousel-caption">
           <h3>Bali</h3>
         </div>
       </div>
     
       <div class="item">
-        <img src="http://static.asiawebdirect.com/m/bangkok/portals/bali-indonesia-com/homepage/pagePropertiesImage/bali-guide.jpg.jpg" alt="Fidji" style="width:100%;">
+        <img src="http://www.passenger6a.fr/wp-content/uploads/2016/04/Foto-03.-Could-9-1200x600.jpg" alt="Perou" style="width:100%;">
         <div class="carousel-caption">
           <h3>Fidji</h3>
         </div>
