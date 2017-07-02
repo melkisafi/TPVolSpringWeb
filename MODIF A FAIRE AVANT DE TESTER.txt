@@ -1,0 +1,11 @@
+Pour que le projet SpringWeb s'exécute ajoutez la dépendence suivante dans le pom.xml du projet bas-niveau:
+
+
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.3.2.Final</version>
+		</dependency>
+
+(merci Safi)
