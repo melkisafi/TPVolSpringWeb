@@ -40,33 +40,32 @@
 				<spring:message code="escale.list.fieldset" />
 			</legend>
 			<table class="table table-striped">
-<!-- 				<tr> -->
-<%-- 					<th><spring:message code="escale.list.id" /></th> --%>
-<%-- 					<th><spring:message code="escale.list.version" /></th> --%>
-<%-- 					<th><spring:message code="escale.list.nom" /></th> --%>
-<%-- 					<th><spring:message code="escale.list.dtDebut" /></th> --%>
-<%-- 					<th><spring:message code="escale.list.dtFin" /></th> --%>
-<!-- 				</tr> -->
+				<tr>
+					<th><spring:message code="escale.list.voldepart" /></th>
+					<th><spring:message code="escale.list.volarrivee" /></th>
+					<th><spring:message code="escale.list.aeronom" /></th>
+					<th><spring:message code="escale.list.escaleArrive" /></th>
+					<th><spring:message code="escale.list.escaleDepart" /></th>
+				</tr>
 
 				<c:forEach items="${escales}" var="escale">
 					<tr>
-						<td>vol départ ${escale.vol.dateDepart} ${escale.vol.heureDepart}</td>
-						<td>Aéroport départ ${escale.vol.depart.nom}</td>
-						<td>vol arrivée ${escale.vol.dateArrivee} ${escale.vol.heureArrivee}</td>
-						<td>aeroport d'escale ${escale.aeroport.nom}</td>
-<%-- 						<td>${escale.nom}</td> --%>
-						<td><fmt:formatDate value="${escale.heureArrivee}" pattern="HH:mm"/></td>
-						<td><fmt:formatDate value="${escale.heureDepart}" pattern="HH:mm"/></td>
-<%-- 						<td><a href="edit?id=${escale.id}" --%>
-<!-- 							class="btn btn-info btn-sm"><span -->
-<!-- 								class="glyphicon glyphicon-pencil"></span></a></td> -->
-<%-- 						<td><a href="delete?id=${escale.id}"><span --%>
-<!-- 								class="glyphicon glyphicon-trash"></span></a></td> -->
+						<td><fmt:formatDate value="${escale.vol.dateDepart}" pattern="dd/MM/yyyy"/></td>
+						<td><fmt:formatDate value="${escale.vol.dateArrivee}" pattern="dd/MM/yyyy"/></td>
+						<td rowspan="2" Style="vertical-align: middle; text-align: center;">${escale.aeroport.nom}</td>
+						<td rowspan="2" Style="vertical-align: middle; text-align: center;"><fmt:formatDate value="${escale.heureArrivee}" pattern="HH:mm"/></td>
+						<td rowspan="2" Style="vertical-align: middle; text-align: center;"><fmt:formatDate value="${escale.heureDepart}" pattern="HH:mm"/></td>
+						<td rowspan="2" Style="vertical-align: middle; text-align: center;"><a href="edit?id=${escale.aeroport}&${escale.vol}" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-pencil"></span></a></td>
+						<td rowspan="2" Style="vertical-align: middle; text-align: center;"><a href="delete?id=${escale.aeroport}&${escale.vol}"><span class="glyphicon glyphicon-trash"></span></a></td>
+					</tr>
+					<tr>
+						<td><fmt:formatDate value="${escale.vol.heureDepart}" pattern="HH:mm"/></td>
+						<td><fmt:formatDate value="${escale.vol.heureArrivee}" pattern="HH:mm"/></td>
+						
 					</tr>
 				</c:forEach>
 				<tr>
-					<td colspan="6"><a href="add" class="btn btn-success btn-sm"><span
-							class="glyphicon glyphicon-plus"></span></a></td>
+					<td colspan="6"><a href="add" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"></span></a></td>
 				</tr>
 			</table>
 		</fieldset>
