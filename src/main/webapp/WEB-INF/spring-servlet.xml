@@ -14,7 +14,7 @@
 	<mvc:annotation-driven validator="validator"/>
 
 	
-	<context:component-scan base-package="aubay.formation.web" />
+	<context:component-scan base-package="agenceVoyageControlleur" />
 	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
