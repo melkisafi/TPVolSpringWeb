@@ -66,10 +66,10 @@ public class EscaleCtrl {
 	@RequestMapping("/add")
 	public String add(Model model) {
 		model.addAttribute("escale", new Escale());
-//		List<Vol> vols =volDao.findAll();
-//		model.addAttribute("escale", vols );
-//		List<Aeroport>aeroports= aeroportDao.findAll();
-//		model.addAttribute("escale",aeroports);
+		List<Vol> lesvols =volDao.findAll();
+		model.addAttribute("lesvols", lesvols );
+		List<Aeroport>lesaeroports= aeroportDao.findAll();
+		model.addAttribute("lesaeroports",lesaeroports);
 		
 		return "escale/escalesEdit";
 	}
