@@ -24,7 +24,7 @@
       <li><a href="#"><spring:message code="MenuNav.vol" /></a></li>
       <li><a href="#"><spring:message code="MenuNav.reservation" /></a></li>
       <li><a href="#"><spring:message code="MenuNav.passager" /></a></li>
-      <li><a href="#"><spring:message code="MenuNav.escale" /></a></li>
+      <li><a href="escale/list"><spring:message code="MenuNav.escale" /></a></li>
       <li><a href="#"><spring:message code="MenuNav.client" /></a></li>
       <li><a href="#"><spring:message code="MenuNav.ville" /></a></li>
       <li><a href="#"><spring:message code="MenuNav.compagnie" /></a></li>
@@ -32,7 +32,7 @@
     </ul>
   </div>
 </nav>
-
+<div style="height: 100px;"></div>
 <div class="container">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
