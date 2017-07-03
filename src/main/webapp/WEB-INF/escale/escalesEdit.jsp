@@ -46,7 +46,7 @@
 					<form:select path="vol.id" id="vols" cssClass="form-control" cssStyle="width: 400px">
 						<form:option value="${null}">Veuillez choisir un vol</form:option>
 						<c:forEach items="${vols}" var="vol">
-							<form:option value="${vol.id}">${vol.depart.nom} --> ${vol.arrivee.nom}</form:option>
+							<form:option value="${vol}">${vol.depart.nom} --> ${vol.arrivee.nom}</form:option>
 						</c:forEach>
 					</form:select>
 					<form:errors path="vol" cssStyle="color:red" />
