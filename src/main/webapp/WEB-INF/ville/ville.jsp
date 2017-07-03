@@ -22,14 +22,14 @@
 	      <a class="navbar-brand" ><spring:message code="accueil.title2" /></a>
 	    </div>
 	    <ul class="nav navbar-nav">
-	      <li class="active"><a href="accueil"><b><spring:message code="MenuNav.accueil" /></b></a></li>
+	      <li><a href="../accueil"><spring:message code="MenuNav.accueil" /></a></li>
 	      <li><a href="../aeroport/list"><spring:message code="MenuNav.aeroport" /></a></li>
 	      <li><a href="../vol/list"><spring:message code="MenuNav.vol" /></a></li>
 	      <li><a href="#"><spring:message code="MenuNav.reservation" /></a></li>
 	      <li><a href="#"><spring:message code="MenuNav.passager" /></a></li>
-	      <li><a href="#"><spring:message code="MenuNav.escale" /></a></li>
+	      <li><a href="../escale/list"><spring:message code="MenuNav.escale" /></a></li>
 	      <li><a href="../client/list"><spring:message code="MenuNav.client" /></a></li>
-	      <li><a href="./list"><spring:message code="MenuNav.ville" /></a></li>
+	      <li class="active"><a href="../ville/list"><b><spring:message code="MenuNav.ville" /></b></a></li>
 	      <li><a href="#"><spring:message code="MenuNav.compagnie" /></a></li>
 	      <li><a href="#"><spring:message code="MenuNav.login" /></a></li>
         </ul>
@@ -57,13 +57,13 @@
 						    <c:when test="${ville.aeroports == null}">
 						        <td>al</td>
 						    </c:when>    
-						    <c:otherwise>
-						    	<c:forEach items="${ville.aeroports}" var="aeroport">
-									<c:if test="${aeroport.ville.id == ville.id}">
-									    <td>${aeroport.aeroport.nom}</td>
-									</c:if>
-								</c:forEach>
-						    </c:otherwise>
+<%-- 						    <c:otherwise> --%>
+<%-- 						    	<c:forEach items="${ville.aeroports}" var="aeroport"> --%>
+<%-- 									<c:if test="${aeroport.ville.id == ville.id}"> --%>
+<%-- 									    <td>${aeroport.aeroport.nom}</td> --%>
+<%-- 									</c:if> --%>
+<%-- 								</c:forEach> --%>
+<%-- 						    </c:otherwise> --%>
 						</c:choose>
 						
 						<td><a href="edit?id=${ville.id}" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-pencil"></span></a></td>

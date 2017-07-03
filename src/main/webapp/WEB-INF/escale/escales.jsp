@@ -19,14 +19,13 @@
 		</div>
 		<ul class="nav navbar-nav">
 			<li><a href="../accueil"><spring:message code="MenuNav.accueil" /></a></li>
-			<li><a href="#"><spring:message code="MenuNav.aeroport" /></a></li>
-			<li><a href="#"><spring:message code="MenuNav.vol" /></a></li>
+			<li><a href="../aeroport/list"><spring:message code="MenuNav.aeroport" /></a></li>
+			<li><a href="../vol/list"><spring:message code="MenuNav.vol" /></a></li>
 			<li><a href="#"><spring:message code="MenuNav.reservation" /></a></li>
 			<li><a href="#"><spring:message code="MenuNav.passager" /></a></li>
-			<li class="active"><a href="../escale/list"><b><spring:message
-							code="MenuNav.escale" /></b></a></li>
-			<li><a href="#"><spring:message code="MenuNav.client" /></a></li>
-			<li><a href="#"><spring:message code="MenuNav.ville" /></a></li>
+			<li class="active"><a href="../escale/list"><b><spring:message code="MenuNav.escale" /></b></a></li>
+			<li><a href="../client/list"><spring:message code="MenuNav.client" /></a></li>
+			<li><a href="../ville/list"><spring:message code="MenuNav.ville" /></a></li>
 			<li><a href="#"><spring:message code="MenuNav.compagnie" /></a></li>
 			<li><a href="#"><spring:message code="MenuNav.login" /></a></li>
 		</ul>
