@@ -49,7 +49,7 @@
 							<form:option value="${vol.id}">${vol.depart.nom} --> ${vol.arrivee.nom}</form:option>
 						</c:forEach>
 					</form:select>
-					<form:errors path="vol.id" cssStyle="color:red" />
+					<form:errors path="vol" cssStyle="color:red" />
 				</div>
 
 				<div class="form-group">
