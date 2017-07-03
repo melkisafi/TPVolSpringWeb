@@ -52,13 +52,15 @@
 						cssStyle="width: 400px" />
 					<form:errors path="heureDepart" cssStyle="color:red" />
 				</div>
-<%-- 				<form:select path="vols" cssClass="form-control" --%>
-<%-- 						cssStyle="width: 400px"> --%>
-<%-- 						<form:option value="${null}">Veuillez choisir le vol</form:option> --%>
-<%-- 						<c:forEach items="${vols}" var="vol"> --%>
-<%-- 							<form:option value="${vol.id}">${vol.id}</form:option> --%>
-<%-- 						</c:forEach> --%>
-<%-- 					</form:select> --%>
+<%-- 				</form:form> --%>
+<%-- 				<form:form modelAttribute="aeroports" action="save" method="post"> --%>
+<%-- 				<form:select path="nom" cssClass="form-control" --%>
+<%--  						cssStyle="width: 400px">  --%>
+<%--  						<form:option value="${null}">Veuillez choisir le vol</form:option>  --%>
+<%--  						<c:forEach items="${aeroports}" var="aeroport">  --%>
+<%--  							<form:option value="${aeroport.nom}">${aeroport.nom}</form:option> --%>
+<%--  						</c:forEach>  --%>
+<%-- 					</form:select>  --%>
 <!-- 				<div class="form-group"> -->
 <%-- 					<form:label path="dtDebut"><spring:message code="formation.add.dtDebut"/></form:label> --%>
 <%-- 					<form:input path="dtDebut" type="Date" cssClass="form-control" --%>

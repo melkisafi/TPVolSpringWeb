@@ -50,13 +50,18 @@
 
 				<c:forEach items="${escales}" var="escale">
 					<tr>
+						<td>${escale.vol.depart.nom}</td>
+						<td>${escale.vol.arrivee.nom}</td>
+						<td rowspan="3" Style="vertical-align: middle; text-align: center;">${escale.aeroport.nom}</td>
+						<td rowspan="3" Style="vertical-align: middle; text-align: center;"><fmt:formatDate value="${escale.heureArrivee}" pattern="HH:mm"/></td>
+						<td rowspan="3" Style="vertical-align: middle; text-align: center;"><fmt:formatDate value="${escale.heureDepart}" pattern="HH:mm"/></td>
+						<td rowspan="3" Style="vertical-align: middle; text-align: center;"><a href="edit?id=${escale.aeroport}&${escale.vol}" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-pencil"></span></a></td>
+						<td rowspan="3" Style="vertical-align: middle; text-align: center;"><a href="delete?id=${escale.aeroport}&${escale.vol}"><span class="glyphicon glyphicon-trash"></span></a></td>
+					</tr>
+					<tr>
 						<td><fmt:formatDate value="${escale.vol.dateDepart}" pattern="dd/MM/yyyy"/></td>
 						<td><fmt:formatDate value="${escale.vol.dateArrivee}" pattern="dd/MM/yyyy"/></td>
-						<td rowspan="2" Style="vertical-align: middle; text-align: center;">${escale.aeroport.nom}</td>
-						<td rowspan="2" Style="vertical-align: middle; text-align: center;"><fmt:formatDate value="${escale.heureArrivee}" pattern="HH:mm"/></td>
-						<td rowspan="2" Style="vertical-align: middle; text-align: center;"><fmt:formatDate value="${escale.heureDepart}" pattern="HH:mm"/></td>
-						<td rowspan="2" Style="vertical-align: middle; text-align: center;"><a href="edit?id=${escale.aeroport}&${escale.vol}" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-pencil"></span></a></td>
-						<td rowspan="2" Style="vertical-align: middle; text-align: center;"><a href="delete?id=${escale.aeroport}&${escale.vol}"><span class="glyphicon glyphicon-trash"></span></a></td>
+						
 					</tr>
 					<tr>
 						<td><fmt:formatDate value="${escale.vol.heureDepart}" pattern="HH:mm"/></td>

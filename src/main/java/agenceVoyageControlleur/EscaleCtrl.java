@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,23 +41,19 @@ public class EscaleCtrl {
 	@RequestMapping("/list")
 	public String list(Model model) {
 
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-
 		List<Escale> escales =  escaleDao.findAll();
 		model.addAttribute("escales", escales);
 		
-		session.close();
 		return "escale/escales";
 	}
 	
 	@RequestMapping("/edit")
 	public String edit(@RequestParam(name = "id", required = true) EscaleId id, Model model) {
 		Escale escale = escaleDao.find(id);
-//		List<Aeroport> aeroports = aeroportDao.findAll();
+		List<Aeroport> aeroports = aeroportDao.findAll();
 //		Aeroport aeroport = aeroportDao.find(escale.getAeroport());
 		model.addAttribute("escale", escale);
-//		model.addAttribute("aeroports", aeroports);
+		model.addAttribute("aeroports", aeroports);
 
 		return "escale/escaleEdit";
 	}
