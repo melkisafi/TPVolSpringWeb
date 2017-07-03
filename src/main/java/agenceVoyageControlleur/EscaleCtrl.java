@@ -61,8 +61,8 @@ public class EscaleCtrl {
 	@RequestMapping("/add")
 	public String add(Model model) {
 		model.addAttribute("escale", new Escale());
-		List<Vol> vols = volDao.findAll();
 		
+		List<Vol> vols = volDao.findAll();
 		model.addAttribute("vols", vols );
 		
 		List<Aeroport> aeroports= aeroportDao.findAll();
@@ -72,7 +72,7 @@ public class EscaleCtrl {
 	}
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(@RequestParam("aeroport_id") Aeroport aId, @RequestParam("vol_id") Vol vid, @ModelAttribute("escale") @Valid Escale escale, BindingResult result) {
+	public String save(@ModelAttribute("escale") @Valid Escale escale, BindingResult result) {
 		
 		
 		
