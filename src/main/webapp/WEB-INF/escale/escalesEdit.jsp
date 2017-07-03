@@ -52,27 +52,19 @@
 						cssStyle="width: 400px" />
 					<form:errors path="heureDepart" cssStyle="color:red" />
 				</div>
-<%-- 				</form:form> --%>
-<%-- 				<form:form modelAttribute="aeroports" action="save" method="post"> --%>
-<%-- 				<form:select path="nom" cssClass="form-control" --%>
-<%--  						cssStyle="width: 400px">  --%>
-<%--  						<form:option value="${null}">Veuillez choisir le vol</form:option>  --%>
-<%--  						<c:forEach items="${aeroports}" var="aeroport">  --%>
-<%--  							<form:option value="${aeroport.nom}">${aeroport.nom}</form:option> --%>
-<%--  						</c:forEach>  --%>
-<%-- 					</form:select>  --%>
-<!-- 				<div class="form-group"> -->
-<%-- 					<form:label path="dtDebut"><spring:message code="formation.add.dtDebut"/></form:label> --%>
-<%-- 					<form:input path="dtDebut" type="Date" cssClass="form-control" --%>
-<%-- 						cssStyle="width: 400px" /> --%>
-<%-- 					<form:errors path="dtDebut" cssStyle="color:red" /> --%>
-<!-- 				</div> -->
-<!-- 				<div class="form-group"> -->
-<%-- 					<form:label path="dtFin"><spring:message code="formation.add.dtFin"/></form:label> --%>
-<%-- 					<form:input path="dtFin" type="Date" cssClass="form-control" --%>
-<%-- 						cssStyle="width: 400px" /> --%>
-<%-- 					<form:errors path="dtFin" cssStyle="color:red" /> --%>
-<!-- 				</div> -->
+			
+	 <select name="vol_id" id="vols" >
+		<c:forEach items="${vols}" var="vol">
+			<option value="${vol.id}">${vol.id}</option>
+		</c:forEach>
+	</select>
+	
+	<select name="aeroport_id" id="aeroports" >
+		<c:forEach items="${aeroports}" var="a">
+			<option value="${a.id}">${a.id}</option>
+		</c:forEach>
+	</select>
+
 				<button class="btn btn-success" type="submit">
 					<span class="glyphicon glyphicon-ok"></span>
 				</button>

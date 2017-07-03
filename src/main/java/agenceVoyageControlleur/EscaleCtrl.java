@@ -61,17 +61,27 @@ public class EscaleCtrl {
 	@RequestMapping("/add")
 	public String add(Model model) {
 		model.addAttribute("escale", new Escale());
-		List<Vol> lesvols =volDao.findAll();
-		model.addAttribute("lesvols", lesvols );
-		List<Aeroport>lesaeroports= aeroportDao.findAll();
-		model.addAttribute("lesaeroports",lesaeroports);
+		List<Vol> vols = volDao.findAll();
+		
+		model.addAttribute("vols", vols );
+		
+		List<Aeroport> aeroports= aeroportDao.findAll();
+		model.addAttribute("aeroports",aeroports);
 		
 		return "escale/escalesEdit";
 	}
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(@ModelAttribute("escale") @Valid Escale escale, BindingResult result) {
-		if (result.hasErrors()){
+	public String save(@RequestParam("aeroport_id") Aeroport aId, @RequestParam("vol_id") Vol vid, @ModelAttribute("escale") @Valid Escale escale, BindingResult result) {
+		
+		
+		
+		
+		//Derniere etape
+		//create escale
+		
+		
+		/*if (result.hasErrors()){
 			return "escale/escalesEdit";
 		}
 		
@@ -79,7 +89,7 @@ public class EscaleCtrl {
 			escaleDao.update(escale);
 		} else {
 			escaleDao.create(escale);
-		}
+		}*/
 		return "redirect:list";
 	}
 }
