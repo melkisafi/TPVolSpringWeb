@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,23 +41,19 @@ public class EscaleCtrl {
 	@RequestMapping("/list")
 	public String list(Model model) {
 
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-
 		List<Escale> escales =  escaleDao.findAll();
 		model.addAttribute("escales", escales);
 		
-		session.close();
 		return "escale/escales";
 	}
 	
 	@RequestMapping("/edit")
 	public String edit(@RequestParam(name = "id", required = true) EscaleId id, Model model) {
 		Escale escale = escaleDao.find(id);
-//		List<Aeroport> aeroports = aeroportDao.findAll();
+		List<Aeroport> aeroports = aeroportDao.findAll();
 //		Aeroport aeroport = aeroportDao.find(escale.getAeroport());
 		model.addAttribute("escale", escale);
-//		model.addAttribute("aeroports", aeroports);
+		model.addAttribute("aeroports", aeroports);
 
 		return "escale/escaleEdit";
 	}
@@ -66,17 +61,27 @@ public class EscaleCtrl {
 	@RequestMapping("/add")
 	public String add(Model model) {
 		model.addAttribute("escale", new Escale());
-		List<Vol> lesvols =volDao.findAll();
-		model.addAttribute("lesvols", lesvols );
-		List<Aeroport>lesaeroports= aeroportDao.findAll();
-		model.addAttribute("lesaeroports",lesaeroports);
+		
+		List<Vol> vols = volDao.findAll();
+		model.addAttribute("vols", vols );
+		
+		List<Aeroport> aeroports= aeroportDao.findAll();
+		model.addAttribute("aeroports",aeroports);
 		
 		return "escale/escalesEdit";
 	}
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String save(@ModelAttribute("escale") @Valid Escale escale, BindingResult result) {
-		if (result.hasErrors()){
+		
+		
+		
+		
+		//Derniere etape
+		//create escale
+		
+		
+		/*if (result.hasErrors()){
 			return "escale/escalesEdit";
 		}
 		
@@ -84,7 +89,7 @@ public class EscaleCtrl {
 			escaleDao.update(escale);
 		} else {
 			escaleDao.create(escale);
-		}
+		}*/
 		return "redirect:list";
 	}
 }
