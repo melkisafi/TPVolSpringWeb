@@ -81,15 +81,15 @@ public class EscaleCtrl {
 		//create escale
 		
 		
-		if (result.hasErrors()){
-			return "escale/escalesEdit";
-		}
+//		if (result.hasErrors()){
+//			return "escale/escalesEdit";
+//		}
 		
-		if (escale.getVol().getId() != null && escale.getAeroport().getId()!=null) {
-			escaleDao.update(escale);
-		} else {
+//		if (escale.getVol().getId() != null && escale.getAeroport().getId()!=null) {
+//			escaleDao.update(escale);
+//		} else {
 			escaleDao.create(escale);
-		}
+//		}
 		return "redirect:list";
 	}
 }

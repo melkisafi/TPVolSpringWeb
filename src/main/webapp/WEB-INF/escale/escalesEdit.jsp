@@ -42,8 +42,8 @@
 				<%-- 				<form:hidden path="version" /> --%>
 
 				<div class="form-group">
-					<form:label path="vol.id"><spring:message code="escale.add.vol" /></form:label>
-					<form:select path="vol.id" id="vols" cssClass="form-control" cssStyle="width: 400px">
+					<form:label path="vol"><spring:message code="escale.add.vol" /></form:label>
+					<form:select path="vol" id="vols" cssClass="form-control" cssStyle="width: 400px">
 						<form:option value="${null}">Veuillez choisir un vol</form:option>
 						<c:forEach items="${vols}" var="vol">
 							<form:option value="${vol}">${vol.depart.nom} --> ${vol.arrivee.nom}</form:option>
@@ -53,14 +53,14 @@
 				</div>
 
 				<div class="form-group">
-					<form:label path="aeroport.id"><spring:message code="escale.add.aeroport" /></form:label>
-					<form:select path="aeroport.id" id="vols" cssClass="form-control" cssStyle="width: 400px">
+					<form:label path="aeroport"><spring:message code="escale.add.aeroport" /></form:label>
+					<form:select path="aeroport" id="aeroports" cssClass="form-control" cssStyle="width: 400px">
 						<form:option value="${null}">Veuillez choisir l'aéroport d'escale</form:option>
 						<c:forEach items="${aeroports}" var="a">
 							<form:option value="${a.id}">${a.nom}</form:option>
 						</c:forEach>
 					</form:select>
-					<form:errors path="aeroport.id" cssStyle="color:red" />
+					<form:errors path="aeroport" cssStyle="color:red" />
 				</div>
 
 				<div class="form-group">
