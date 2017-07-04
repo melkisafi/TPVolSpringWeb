@@ -80,7 +80,7 @@ public class EscaleCtrl {
 		//Derniere etape
 		//create escale
 		
-		
+//		
 //		if (result.hasErrors()){
 //			return "escale/escalesEdit";
 //		}
