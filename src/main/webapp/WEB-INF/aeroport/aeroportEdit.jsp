@@ -23,19 +23,19 @@
       <a class="navbar-brand" ><spring:message code="accueil.title2" /></a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="../accueil"><spring:message code="MenuNav.accueil" /></a></li>
-      <li class="active"><a href="../aeroport/list"><b><spring:message code="MenuNav.aeroport" /></b></a></li>
+      <li class="active"><a href="accueil"><b><spring:message code="MenuNav.accueil" /></b></a></li>
+      <li><a href="../aeroport/list"><spring:message code="MenuNav.aeroport" /></a></li>
       <li><a href="../vol/list"><spring:message code="MenuNav.vol" /></a></li>
       <li><a href="#"><spring:message code="MenuNav.reservation" /></a></li>
       <li><a href="#"><spring:message code="MenuNav.passager" /></a></li>
       <li><a href="../escale/list"><spring:message code="MenuNav.escale" /></a></li>
-      <li><a href="../client/list"><spring:message code="MenuNav.client" /></a></li>
-      <li><a href="../ville/list"><spring:message code="MenuNav.ville" /></a></li>
+      <li><a href="#"><spring:message code="MenuNav.client" /></a></li>
+      <li><a href="#"><spring:message code="MenuNav.ville" /></a></li>
       <li><a href="#"><spring:message code="MenuNav.compagnie" /></a></li>
       <li><a href="#"><spring:message code="MenuNav.login" /></a></li>
     </ul>
   </div>
-</nav><div style="height: 100px;"></div>
+</nav>
 
 <div class="container">
 		<fieldset>
@@ -50,7 +50,7 @@
 					<form:errors path="nom" cssStyle="color:red"/>
 				</div>
 			
-				<%-- <div class="form-group">
+				<div class="form-group">
 					<form:label path="villes"><spring:message code="aeroport.edit.choixville" /></form:label>
 					<form:select path="villes" cssClass="form-control" cssStyle="width: 400px">
 						<form:option value="${null}"><spring:message code="aeroport.edit.choixville" /></form:option>
@@ -60,7 +60,7 @@
 						
 					</form:select>
 					<form:errors path="villes" cssStyle="color:red"/>
-				</div> --%>
+				</div>
 				<button class="btn btn-success" type="submit">
 					<span class="glyphicon glyphicon-ok"></span>
 				</button>
