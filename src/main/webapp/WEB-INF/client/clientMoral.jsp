@@ -37,10 +37,19 @@
 	<div class="container">
 		<fieldset>
 			<legend>Edition Client Moral</legend>
-			<form:form modelAttribute="client" action="saveMor" method="post">
+			<form:form modelAttribute="client" action="save" method="post">
 				<form:hidden path="id" />
 				<form:hidden path="version" />
 				<form:hidden path="adresse" />
+				<div class="form-group">
+					<form:label path="titre">Titre</form:label>
+					<form:select path="titre" cssClass="form-control" cssStyle="width: 400px">
+						<form:option value="${null}">Choisir</form:option>
+						<form:options items="${titreMoral}"></form:options>
+					</form:select>
+					<form:errors path="titre" cssStyle="color:red"/>
+				</div>
+				
 				<div class="form-group">
 					<form:label path="nom">Nom</form:label>
 					<form:input path="nom" type="text" cssClass="form-control" cssStyle="width: 400px"/>

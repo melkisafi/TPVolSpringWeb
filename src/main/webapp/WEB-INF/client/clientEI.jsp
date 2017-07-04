@@ -37,7 +37,7 @@
 	<div class="container">
 		<fieldset>
 			<legend>Edition Client EI</legend>
-			<form:form modelAttribute="client" action="saveEI" method="post">
+			<form:form modelAttribute="client" action="save" method="post">
 				<form:hidden path="id" />
 				<form:hidden path="version" />
 				<form:hidden path="adresse" />

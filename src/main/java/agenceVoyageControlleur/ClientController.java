@@ -15,6 +15,8 @@ import vol.metier.model.Client;
 import vol.metier.model.ClientEI;
 import vol.metier.model.ClientMoral;
 import vol.metier.model.ClientPhysique;
+import vol.metier.model.TitreMoral;
+import vol.metier.model.TitrePhysique;
 
 @Controller
 @RequestMapping("/client")
@@ -34,12 +36,14 @@ public class ClientController {
 	@RequestMapping("/addMoral")
 	public String addMoral(Model model){	
 		model.addAttribute("client", new ClientMoral());
+		model.addAttribute("titreMoral", TitreMoral.values());
 		return "client/clientMoral";
 	}
 	
 	@RequestMapping("/addPhysique")
 	public String addPhysique(Model model){	
 		model.addAttribute("client", new ClientPhysique());
+		model.addAttribute("titrePhysique", TitrePhysique.values());
 		return "client/clientPhysique";
 	}
 	
@@ -57,8 +61,8 @@ public class ClientController {
 		return "client/clientEdit";
 	}
 	
-	@RequestMapping(value = "/savePhy", method = RequestMethod.POST)
-	public String save(@ModelAttribute("client") ClientPhysique client) {
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	public String save(@ModelAttribute("client") Client client) {
 
 		if (client.getId() == null) {
 			clientDao.create(client);
@@ -69,29 +73,29 @@ public class ClientController {
 		return "redirect:list";
 	}
 	
-	@RequestMapping(value = "/saveMor", method = RequestMethod.POST)
-	public String save(@ModelAttribute("client") ClientMoral client) {
-
-		if (client.getId() == null) {
-			clientDao.create(client);
-		} else {
-			clientDao.update(client);
-		}
-
-		return "redirect:list";
-	}
-	
-	@RequestMapping(value = "/saveEI", method = RequestMethod.POST)
-	public String save(@ModelAttribute("client") ClientEI client) {
-
-		if (client.getId() == null) {
-			clientDao.create(client);
-		} else {
-			clientDao.update(client);
-		}
-
-		return "redirect:list";
-	}
+//	@RequestMapping(value = "/saveMor", method = RequestMethod.POST)
+//	public String save(@ModelAttribute("client") ClientMoral client) {
+//
+//		if (client.getId() == null) {
+//			clientDao.create(client);
+//		} else {
+//			clientDao.update(client);
+//		}
+//
+//		return "redirect:list";
+//	}
+//	
+//	@RequestMapping(value = "/saveEI", method = RequestMethod.POST)
+//	public String save(@ModelAttribute("client") ClientEI client) {
+//
+//		if (client.getId() == null) {
+//			clientDao.create(client);
+//		} else {
+//			clientDao.update(client);
+//		}
+//
+//		return "redirect:list";
+//	}
 	
 	@RequestMapping(value = "/delete")
 	public String delete(@RequestParam(name = "id", required = true) Long id) {
