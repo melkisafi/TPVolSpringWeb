@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import vol.metier.dao.AeroportDao;
 import vol.metier.dao.CompagnieAerienneDao;
+import vol.metier.dao.EscaleDao;
 import vol.metier.dao.VolDao;
 import vol.metier.model.Vol;
 
@@ -47,16 +48,22 @@ public class VolController {
 	
 	@RequestMapping("/add")
 	public String add(Model model) {
+		model.addAttribute("mode", "add");
 		model.addAttribute("vol", new Vol());
-		model.addAttribute("vols", volDao.findAll());
 		
-			
+		model.addAttribute("vols", volDao.findAll());
+		 
+		
+		//Envoi de deux listes d'aéroports à la JSP
+		model.addAttribute("departs", aeroportDao.findAll());
+		model.addAttribute("arrivees", aeroportDao.findAll());
 		
 		return "vol/volEdit";
 	}
 	
 	@RequestMapping("/edit")
 	public String edit(@RequestParam(name="id", required=true) Long id, Model model){
+		model.addAttribute("mode", "edit");
 		Vol vol =volDao.find(id);
 		model.addAttribute("vol", vol);
 		model.addAttribute("vols", volDao.findAll());
@@ -79,10 +86,10 @@ public class VolController {
 //		if(result.hasErrors()){
 //			return "aeroport/aeroportEdit";
 //		}
-//		if (aeroport.getId() == null) {
-//			aeroportDao.create(aeroport);
+//		if (vol.getId() == null) {
+//			volDao.create(vol);
 //		} else {
-//			aeroportDao.update(aeroport);
+//			volDao.update(vol);
 //		}
 //
 		return "redirect:list";
