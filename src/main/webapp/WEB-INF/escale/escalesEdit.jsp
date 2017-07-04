@@ -19,16 +19,14 @@
 			<a class="navbar-brand"><spring:message code="accueil.title2" /></a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li><a href="../accueil"><spring:message
-						code="MenuNav.accueil" /></a></li>
-			<li><a href="#"><spring:message code="MenuNav.aeroport" /></a></li>
-			<li><a href="#"><spring:message code="MenuNav.vol" /></a></li>
+			<li><a href="../accueil"><spring:message code="MenuNav.accueil" /></a></li>
+			<li><a href="../aeroport/list"><spring:message code="MenuNav.aeroport" /></a></li>
+			<li><a href="../vol/list"><spring:message code="MenuNav.vol" /></a></li>
 			<li><a href="#"><spring:message code="MenuNav.reservation" /></a></li>
 			<li><a href="#"><spring:message code="MenuNav.passager" /></a></li>
-			<li class="active"><a href="../escale/list"><b><spring:message
-							code="MenuNav.escale" /></b></a></li>
-			<li><a href="#"><spring:message code="MenuNav.client" /></a></li>
-			<li><a href="#"><spring:message code="MenuNav.ville" /></a></li>
+			<li class="active"><a href="../escale/list"><b><spring:message code="MenuNav.escale" /></b></a></li>
+			<li><a href="../client/list"><spring:message code="MenuNav.client" /></a></li>
+			<li><a href="../ville/list"><spring:message code="MenuNav.ville" /></a></li>
 			<li><a href="#"><spring:message code="MenuNav.compagnie" /></a></li>
 			<li><a href="#"><spring:message code="MenuNav.login" /></a></li>
 		</ul>
@@ -38,25 +36,20 @@
 
 	<div class="container">
 		<fieldset>
-			<legend>
-				<spring:message code="escale.add.fieldset" />
-			</legend>
+			<legend><spring:message code="escale.add.fieldset" /></legend>
 			<form:form modelAttribute="escale" action="save" method="post">
 				<%-- 				<form:hidden path="id" /> --%>
 				<%-- 				<form:hidden path="version" /> --%>
 
 				<div class="form-group">
-					<form:label path="vol.id">
-						<spring:message code="escale.add.vol" />
-					</form:label>
-					<form:select path="vol.id" id="vols" cssClass="form-control"
-						cssStyle="width: 400px">
+					<form:label path="vol.id"><spring:message code="escale.add.vol" /></form:label>
+					<form:select path="vol.id" id="vols" cssClass="form-control" cssStyle="width: 400px">
 						<form:option value="${null}">Veuillez choisir un vol</form:option>
 						<c:forEach items="${vols}" var="vol">
-							<form:option value="${vol.id}">${vol.depart.nom} --> ${vol.arrivee.nom}</form:option>
+							<form:option value="${vol}">${vol.depart.nom} --> ${vol.arrivee.nom}</form:option>
 						</c:forEach>
 					</form:select>
-					<form:errors path="vol.id" cssStyle="color:red" />
+					<form:errors path="vol" cssStyle="color:red" />
 				</div>
 
 				<div class="form-group">
@@ -71,27 +64,17 @@
 				</div>
 
 				<div class="form-group">
-					<form:label path="heureArrivee">
-						<spring:message code="escale.add.heureArrivee" />
-					</form:label>
-					<form:input path="heureArrivee" type="Time" cssClass="form-control"
-						cssStyle="width: 400px" />
+					<form:label path="heureArrivee"><spring:message code="escale.add.heureArrivee" /></form:label>
+					<form:input path="heureArrivee" type="Time" cssClass="form-control" cssStyle="width: 400px" />
 					<form:errors path="heureArrivee" cssStyle="color:red" />
 				</div>
 				<div class="form-group">
-					<form:label path="heureDepart">
-						<spring:message code="escale.add.heureDepart" />
-					</form:label>
-					<form:input path="heureDepart" type="Time" cssClass="form-control"
-						cssStyle="width: 400px" />
+					<form:label path="heureDepart"><spring:message code="escale.add.heureDepart" /></form:label>
+					<form:input path="heureDepart" type="Time" cssClass="form-control" cssStyle="width: 400px" />
 					<form:errors path="heureDepart" cssStyle="color:red" />
 				</div>
-				<button class="btn btn-success" type="submit">
-					<span class="glyphicon glyphicon-ok"></span>
-				</button>
-				<button class="btn btn-warning">
-					<span class="glyphicon glyphicon-arrow-left"></span>
-				</button>
+				<button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-ok"></span></button>
+				<button class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left"></span></button>
 			</form:form>
 		</fieldset>
 	</div>
