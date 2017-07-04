@@ -57,12 +57,27 @@ public class ClientController {
 	public String edit(@RequestParam(name = "id", required = true) Long id, Model model) {
 		Client client = clientDao.find(id);
 		model.addAttribute("client", client);
-
-		return "client/clientEdit";
+		if(client instanceof ClientPhysique)
+			return "client/clientPhysique";
+		else if(client instanceof ClientMoral)
+			return "client/clientMoral";
+		else
+			return "client/clientEI";
 	}
 	
-	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(@ModelAttribute("client") Client client) {
+	@RequestMapping(value = "/savePhy", method = RequestMethod.POST)
+	public String save(@ModelAttribute("client") ClientPhysique client) {	
+		if (client.getId() == null) {
+			clientDao.create(client);
+		} else {
+			clientDao.update(client);
+		}
+
+		return "redirect:list";
+	}
+	
+	@RequestMapping(value = "/saveMor", method = RequestMethod.POST)
+	public String save(@ModelAttribute("client") ClientMoral client) {
 
 		if (client.getId() == null) {
 			clientDao.create(client);
@@ -73,29 +88,17 @@ public class ClientController {
 		return "redirect:list";
 	}
 	
-//	@RequestMapping(value = "/saveMor", method = RequestMethod.POST)
-//	public String save(@ModelAttribute("client") ClientMoral client) {
-//
-//		if (client.getId() == null) {
-//			clientDao.create(client);
-//		} else {
-//			clientDao.update(client);
-//		}
-//
-//		return "redirect:list";
-//	}
-//	
-//	@RequestMapping(value = "/saveEI", method = RequestMethod.POST)
-//	public String save(@ModelAttribute("client") ClientEI client) {
-//
-//		if (client.getId() == null) {
-//			clientDao.create(client);
-//		} else {
-//			clientDao.update(client);
-//		}
-//
-//		return "redirect:list";
-//	}
+	@RequestMapping(value = "/saveEI", method = RequestMethod.POST)
+	public String save(@ModelAttribute("client") ClientEI client) {
+
+		if (client.getId() == null) {
+			clientDao.create(client);
+		} else {
+			clientDao.update(client);
+		}
+
+		return "redirect:list";
+	}
 	
 	@RequestMapping(value = "/delete")
 	public String delete(@RequestParam(name = "id", required = true) Long id) {

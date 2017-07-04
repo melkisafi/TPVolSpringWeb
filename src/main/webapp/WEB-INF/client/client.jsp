@@ -12,7 +12,7 @@
 		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	  <title><spring:message code="vol.list.title" /></title>
+	  <title><spring:message code="client.list.title" /></title>
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <title>Liste des clients</title>
 </head>
@@ -64,18 +64,10 @@
 					<tr>
 						<td>${client.id}</td>
 						<td>${client.version}</td>
-						<!-- Simule le If...else & et gestion du choix entre
-						 un client Physique et Moral
-						 <c:choose> 
-						    <c:when test="${empty exception}">
-						        <td>Client Physique</td>
-						    </c:when>    
-						    <c:otherwise>
-						        <td>Client Moral</td>
-						    </c:otherwise>
-						</c:choose> -->
-						<c:catch var="exception">
-						<td>${client.type}</td>
+							<c:catch var="exception">
+						<c:catch var="exception0">
+						<td>${client.titre}</td>
+						</c:catch>
 						</c:catch>
 						
 						<td>${client.nom}</td>
